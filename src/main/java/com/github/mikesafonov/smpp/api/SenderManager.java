@@ -1,8 +1,10 @@
 package com.github.mikesafonov.smpp.api;
 
+import com.github.mikesafonov.smpp.config.SmscConnection;
 import com.github.mikesafonov.smpp.core.sender.SenderClient;
 
 import javax.validation.constraints.NotBlank;
+import java.util.List;
 
 /**
  * Holder class for sender clients.
@@ -23,4 +25,15 @@ public interface SenderManager {
      * @return next sender client
      */
     SenderClient getClient();
+
+
+    void create(SmscConnection connection);
+
+
+    void remove(@NotBlank String name);
+
+
+    List<String> keys();
+
+
 }
